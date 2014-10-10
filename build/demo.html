@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +8,6 @@
 
 <div id="embed-api-auth-container"></div>
 <pre id="account-summaries-output"></pre>
-
 
 <!-- Load the account summaries module, it will be at:
     `window.gaApiUtils.accountSummaries` -->
@@ -30,7 +28,7 @@ gapi.analytics.ready(function() {
   gapi.analytics.auth.on('success', gaApiUtilsDemo);
 
   // This client ID will work at http://localhost:8080.
-  // To run this demo on other hosts or ports use your own client ID.
+  // To run this demo on other hosts or ports, you must use your own client ID.
   gapi.analytics.auth.authorize({
     container: 'embed-api-auth-container',
     clientid: '793177639245-olst43lspv93vkoql0b9l26hmpf9kfmv.apps.googleusercontent.com',
@@ -38,18 +36,17 @@ gapi.analytics.ready(function() {
 });
 
 function gaApiUtilsDemo() {
-
-  gaApiUtils.accountSummaries.get().then(function(summaries) {
-    var output = document.getElementById('account-summaries-output');
-    output.innerHTML = JSON.stringify(summaries.all(), null, 2);
-  });
-
+  var output = document.getElementById('account-summaries-output');
+  gaApiUtils.accountSummaries.get().then(
+    function onResolved(summaries) {
+      output.innerText = JSON.stringify(summaries.all(), null, 2);
+    },
+    function onRejected(error) {
+      output.innerText = error.message;
+    }
+  );
 }
-
 </script>
-
-</head>
-<body>
 
 </body>
 </html>

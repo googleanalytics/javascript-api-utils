@@ -1,22 +1,21 @@
-/* global describe, gapi, it, Promise */
+/* global describe, gapi, it */
 
 var accountSummaries = require('../../lib/account-summaries');
 var assert = require('assert');
 var fixtures = require('./fixtures');
 var sinon = require('sinon');
 
-require('native-promise-only');
 require('./stubs/gapi');
 
 describe('accountSummaries', function() {
 
   describe('.get', function() {
 
-    it('returns a promise that is resolved with an account summaries array',
+    it('returns a "thenable" that is resolved with an account summaries array',
         function(done) {
 
       var returnValue = accountSummaries.get();
-      assert(returnValue instanceof Promise);
+      assert('then' in returnValue);
 
       returnValue.then(function(summaries) {
         assert.deepEqual(summaries.all(), fixtures.get().items);
