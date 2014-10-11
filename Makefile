@@ -17,6 +17,6 @@ test_debug:
 build: install lint test
 	@ $(bin_path)/browserify lib/account-summaries \
 		-s gaApiUtils.accountSummaries \
-		| uglifyjs -o build/account-summaries.js
+		| $(bin_path)/uglifyjs -o build/account-summaries.js
 
 .PHONY: all install lint test test_debug build
