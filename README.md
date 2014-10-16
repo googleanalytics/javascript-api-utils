@@ -24,9 +24,9 @@ The easiest way to load the client library and authorize the current user is to 
 ```js
 var accountSummaries = require('javascript-api-utils/lib/account-summaries');
 
-// Log a list of all the user's Google Analytics accounts to the console.
+// Log a list of all the user's Google Analytics views to the console.
 accountSummaries.get().then(function(summaries) {
-  console.log(summaries.all());
+  console.log(summaries.allViews());
 });
 ```
 
