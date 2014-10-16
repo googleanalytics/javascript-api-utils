@@ -11,7 +11,7 @@ describe('accountSummaries', function() {
 
   describe('.get', function() {
 
-    it('returns a "thenable" that is resolved with an account summaries array',
+    it('returns a "thenable" that is resolved with an account summaries array.',
         function(done) {
 
       var returnValue = accountSummaries.get();
@@ -25,7 +25,7 @@ describe('accountSummaries', function() {
 
     });
 
-    it('does not query the API more than once, even with multiple calls',
+    it('does not query the API more than once, even with multiple calls.',
         function(done) {
 
       var listSpy =
@@ -48,7 +48,7 @@ describe('accountSummaries', function() {
       });
     });
 
-    it('accepts an optional parameter to clear the cache', function(done) {
+    it('accepts an optional parameter to clear the cache.', function(done) {
 
       var listSpy =
           sinon.spy(gapi.client.analytics.management.accountSummaries, 'list');
@@ -103,7 +103,7 @@ describe('accountSummaries', function() {
     });
 
     it('throws if the user requesting the summares does not have any ' +
-        'Google Analytics accounts', function(done) {
+        'Google Analytics accounts.', function(done) {
 
       fixtures.set('without-account');
 

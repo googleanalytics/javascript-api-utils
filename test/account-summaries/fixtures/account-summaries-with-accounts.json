@@ -155,7 +155,7 @@
         {
           "kind": "analytics#webPropertySummary",
           "id": "UA-1005-1",
-          "name": "WebProperty D.A (View-less)",
+          "name": "WebProperty E.A (View-less)",
           "internalWebPropertyId": "3005",
           "level": "STANDARD",
           "websiteUrl": "http://example.com"

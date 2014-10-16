@@ -4,6 +4,20 @@ var AccountSummaries = require('../../lib/account-summaries/account-summaries');
 var assert = require('assert');
 var fixtureAccounts = require('./fixtures').get().items;
 
+var fixtureWebProperties = fixtureAccounts
+    .reduce(function(webProperties, account) {
+      return account.webProperties ?
+          webProperties.concat(account.webProperties) :
+          webProperties;
+    }, []);
+
+var fixtureProfiles = fixtureWebProperties
+    .reduce(function(profiles, webProperty) {
+      return webProperty.profiles ?
+          profiles.concat(webProperty.profiles) :
+          profiles;
+    }, []);
+
 require('native-promise-only');
 require('./stubs/gapi');
 
@@ -12,8 +26,40 @@ describe('AccountSummaries', function() {
   var summaries = new AccountSummaries(fixtureAccounts);
 
   describe('#all', function() {
-    it('returns the full list of accounts', function() {
+    it('returns the full list of accounts the user has access to.', function() {
       assert.deepEqual(summaries.all(), fixtureAccounts);
+    });
+  });
+
+  describe('#allAccounts', function() {
+    it('returns the full list of accounts the user has access to.', function() {
+      assert.deepEqual(summaries.all(), fixtureAccounts);
+    });
+  });
+
+  describe('#allWebProperties', function() {
+    it('returns the full list of web properties the user has access to.',
+        function() {
+      assert.deepEqual(summaries.allWebProperties(), fixtureWebProperties);
+    });
+  });
+
+  describe('#allProperties', function() {
+    it('returns the full list of properties the user has access to.',
+        function() {
+      assert.deepEqual(summaries.allProperties(), fixtureWebProperties);
+    });
+  });
+
+  describe('#allProfiles', function() {
+    it('returns the full list of profiles the user has access to.', function() {
+      assert.deepEqual(summaries.allProfiles(), fixtureProfiles);
+    });
+  });
+
+  describe('#allViews', function() {
+    it('returns the full list of views the user has access to.', function() {
+      assert.deepEqual(summaries.allViews(), fixtureProfiles);
     });
   });
 
@@ -61,7 +107,7 @@ describe('AccountSummaries', function() {
     it('returns the web property with the specified ID.', function() {
       assert.equal(
           summaries.getWebProperty('UA-1005-1').name,
-          'WebProperty D.A (View-less)');
+          'WebProperty E.A (View-less)');
     });
   });
 
@@ -69,7 +115,7 @@ describe('AccountSummaries', function() {
     it('returns the property with the specified ID.', function() {
       assert.equal(
           summaries.getProperty('UA-1005-1').name,
-          'WebProperty D.A (View-less)');
+          'WebProperty E.A (View-less)');
     });
   });
 
