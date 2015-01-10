@@ -13,21 +13,24 @@
 // limitations under the License.
 
 
-var accountSummariesFixtureWithAccounts =
-    require('./account-summaries-with-accounts');
+/* global gapi:true, Promise:true */
 
-var accountSummariesFixtureWithoutAccounts =
-    require('./account-summaries-without-accounts');
+var fixtures = require('../fixtures/columns.json');
+var namespace = require('mout/object/namespace');
 
-var currentFixture = accountSummariesFixtureWithAccounts;
+// Polyfill Promises for node.
+Promise = require('native-promise-only');
 
-module.exports = {
-  get: function() {
-    return JSON.parse(JSON.stringify(currentFixture));
-  },
-  set: function(choice) {
-    currentFixture = (choice == 'with-accounts') ?
-      accountSummariesFixtureWithAccounts :
-      accountSummariesFixtureWithoutAccounts;
-  }
+// Assign this globally because that's how it is IRL.
+namespace(global, 'gapi.client.analytics.metadata.columns');
+
+gapi.client.analytics.metadata.columns.list = function() {
+
+  var response = { result: fixtures };
+
+  return {
+    then: function(fn) {
+      return Promise.resolve(fn(response));
+    }
+  };
 };

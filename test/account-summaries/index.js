@@ -1,4 +1,4 @@
-// Copyright 2014 Google Inc. All rights reserved.
+// Copyright 2015 Google Inc. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -49,8 +49,8 @@ describe('accountSummaries', function() {
       accountSummaries.get().then(function(summaries1) {
         accountSummaries.get().then(function(summaries2) {
           accountSummaries.get().then(function(summaries3) {
-            // If the previous test was run first, callCount will be 0.
-            assert(listSpy.callCount <= 1);
+
+            assert(listSpy.callCount === 0);
             assert.equal(summaries1, summaries2);
             assert.equal(summaries2, summaries3);
             assert.deepEqual(summaries3.all(), fixtures.get().items);

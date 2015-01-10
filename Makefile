@@ -15,8 +15,8 @@ test_debug:
 	@ $(bin_path)/mocha --debug-brk --reporter spec --recursive test
 
 build: install lint test
-	@ $(bin_path)/browserify lib/account-summaries \
-		-s gaApiUtils.accountSummaries \
-		| $(bin_path)/uglifyjs -o build/account-summaries.js
+	@ $(bin_path)/browserify lib \
+		-s gaApiUtils \
+		| $(bin_path)/uglifyjs -o build/ga-api-utils.js
 
 .PHONY: all install lint test test_debug build

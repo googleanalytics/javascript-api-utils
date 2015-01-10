@@ -1,4 +1,4 @@
-// Copyright 2014 Google Inc. All rights reserved.
+// Copyright 2015 Google Inc. All rights reserved.
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -16,12 +16,13 @@
 /* global gapi:true, Promise:true */
 
 var fixtures = require('../fixtures');
+var namespace = require('mout/object/namespace');
 
 // Polyfill Promises for node.
 Promise = require('native-promise-only');
 
 // Assign this globally because that's how it is IRL.
-gapi = {client: {analytics: {management: {accountSummaries: {}}}}};
+namespace(global, 'gapi.client.analytics.management.accountSummaries');
 
 gapi.client.analytics.management.accountSummaries.list = function(options) {
 
