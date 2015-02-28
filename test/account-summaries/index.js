@@ -13,14 +13,15 @@
 // limitations under the License.
 
 
-/* global describe, gapi, it */
-
 var accountSummaries = require('../../lib/account-summaries');
 var assert = require('assert');
-var fixtures = require('./fixtures');
-var sinon = require('sinon');
+var gapiClientRequest = require('../_stubs/gapi-client-request');
 
-require('./stubs/gapi');
+
+function getFixture(name) {
+  return require('../_fixtures/' + name);
+}
+
 
 describe('accountSummaries', function() {
 
@@ -29,33 +30,40 @@ describe('accountSummaries', function() {
     it('returns a "thenable" that is resolved with an account summaries array.',
         function(done) {
 
+      var fixture = getFixture('account-summaries');
+      var requestStub = gapiClientRequest(fixture);
+
       var returnValue = accountSummaries.get();
       assert('then' in returnValue);
 
       returnValue.then(function(summaries) {
-        assert.deepEqual(summaries.all(), fixtures.get().items);
+        assert.deepEqual(summaries.all(), fixture.items);
         done();
       })
       .catch(done);
 
+      requestStub.restore();
     });
 
     it('does not query the API more than once, even with multiple calls.',
         function(done) {
 
-      var listSpy =
-          sinon.spy(gapi.client.analytics.management.accountSummaries, 'list');
+      var fixture = getFixture('account-summaries');
+      var requestStub = gapiClientRequest(fixture);
 
       accountSummaries.get().then(function(summaries1) {
         accountSummaries.get().then(function(summaries2) {
           accountSummaries.get().then(function(summaries3) {
 
-            assert(listSpy.callCount === 0);
+            // It will be one if this test is run alone, zero if another
+            // test has run before it. Either way it's not 3.
+            assert(requestStub.callCount <= 1);
+
             assert.equal(summaries1, summaries2);
             assert.equal(summaries2, summaries3);
-            assert.deepEqual(summaries3.all(), fixtures.get().items);
+            assert.deepEqual(summaries3.all(), fixture.items);
 
-            listSpy.restore();
+            requestStub.restore();
             done();
           })
           .catch(done);
@@ -65,13 +73,14 @@ describe('accountSummaries', function() {
 
     it('accepts an optional parameter to clear the cache.', function(done) {
 
-      var listSpy =
-          sinon.spy(gapi.client.analytics.management.accountSummaries, 'list');
+      var fixture = getFixture('account-summaries');
+      var requestStub = gapiClientRequest(fixture);
 
       accountSummaries.get(true).then(function(summaries1) {
         accountSummaries.get(true).then(function(summaries2) {
           accountSummaries.get(true).then(function(summaries3) {
-            assert.equal(listSpy.callCount, 3);
+
+            assert.equal(requestStub.callCount, 3);
 
             // When clearing the cache these should be deepEqual but
             // not the same object.
@@ -80,9 +89,9 @@ describe('accountSummaries', function() {
             assert.deepEqual(summaries1, summaries2);
             assert.deepEqual(summaries2, summaries3);
 
-            assert.deepEqual(summaries3.all(), fixtures.get().items);
+            assert.deepEqual(summaries3.all(), fixture.items);
 
-            listSpy.restore();
+            requestStub.restore();
             done();
           })
           .catch(done);
@@ -94,23 +103,22 @@ describe('accountSummaries', function() {
     it('returns the full account summaries list, not a paginatated one.',
         function(done) {
 
-      var originalListMethod =
-          gapi.client.analytics.management.accountSummaries.list;
-
-      var listStub = sinon.stub(
-          gapi.client.analytics.management.accountSummaries, 'list',
-          function(options) {
-            options = options || {};
-            // Add `max-results: 2` to force pagination.
-            options['max-results'] = 2;
-            return originalListMethod(options);
-          });
+      var fixture = getFixture('account-summaries');
+      var requestStub = gapiClientRequest(fixture, {
+        params: {
+          'max-results': 2
+        }
+      });
 
       accountSummaries.get(true).then(function(summaries) {
-        assert.equal(listStub.callCount, 3);
-        assert.deepEqual(summaries.all(), fixtures.get().items);
+        // `gapi.client.request` will be called three times because
+        // the response is paginated.
+        assert.equal(requestStub.callCount, 3);
 
-        listStub.restore();
+        // The full response is returned, not just 2 items.
+        assert.deepEqual(summaries.all(), fixture.items);
+
+        requestStub.restore();
         done();
       })
       .catch(done);
@@ -120,14 +128,14 @@ describe('accountSummaries', function() {
     it('throws if the user requesting the summares does not have any ' +
         'Google Analytics accounts.', function(done) {
 
-      fixtures.set('without-account');
+      var fixture = getFixture('account-summaries-no-accounts');
+      var requestStub = gapiClientRequest(fixture);
 
       accountSummaries.get(true).catch(function(err) {
         assert.equal(err.message, 'You do not have any Google Analytics ' +
             'accounts. Go to http://google.com/analytics to sign up.');
 
-        // Restore the original fixtures.
-        fixtures.set('with-account');
+        requestStub.restore();
         done();
       });
     });

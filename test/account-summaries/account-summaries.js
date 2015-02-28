@@ -13,11 +13,10 @@
 // limitations under the License.
 
 
-/* global describe, it */
-
 var AccountSummaries = require('../../lib/account-summaries/account-summaries');
 var assert = require('assert');
-var fixtureAccounts = require('./fixtures').get().items;
+
+var fixtureAccounts = require('../_fixtures/account-summaries').items;
 
 var fixtureWebProperties = fixtureAccounts
     .reduce(function(webProperties, account) {
@@ -33,8 +32,6 @@ var fixtureProfiles = fixtureWebProperties
           profiles;
     }, []);
 
-require('native-promise-only');
-require('./stubs/gapi');
 
 describe('AccountSummaries', function() {
 

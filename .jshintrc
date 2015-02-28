@@ -1,7 +1,9 @@
 {
   "browser": true,
   "boss": true,
+  "esnext": true,
   "expr": true,
+  "mocha": true,
   "node": true,
   "quotmark": "single"
 }
