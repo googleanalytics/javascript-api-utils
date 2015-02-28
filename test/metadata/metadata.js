@@ -13,30 +13,31 @@
 // limitations under the License.
 
 
-/* global describe, it */
-
-require('native-promise-only');
-require('./stubs/gapi');
-
-var Metadata = require('../../lib/metadata/metadata');
 var assert = require('assert');
+var Metadata = require('../../lib/metadata/metadata');
 
-var columns = require('./fixtures/columns.json').items;
+var columns = require('../_fixtures/metadata.json').items;
+
 var metrics = columns.filter(function(column) {
   return column.attributes.type == 'METRIC';
 });
+
 var publicMetrics = metrics.filter(function(metric) {
   return metric.attributes.status == 'PUBLIC';
 });
+
 var deprecatedMetrics = metrics.filter(function(metric) {
   return metric.attributes.status == 'DEPRECATED';
 });
+
 var dimensions = columns.filter(function(column) {
   return column.attributes.type == 'DIMENSION';
 });
+
 var publicDimensions = dimensions.filter(function(dimension) {
   return dimension.attributes.status == 'PUBLIC';
 });
+
 var deprecatedDimensions = dimensions.filter(function(dimension) {
   return dimension.attributes.status == 'DEPRECATED';
 });

@@ -13,49 +13,57 @@
 // limitations under the License.
 
 
-/* global describe, gapi, it */
-
-var metadata = require('../../lib/metadata');
 var assert = require('assert');
-var fixtures = require('./fixtures/columns.json');
-var sinon = require('sinon');
+var gapiClientRequest = require('../_stubs/gapi-client-request');
+var metadata = require('../../lib/metadata');
 
-require('./stubs/gapi');
+
+function getFixture(name) {
+  return require('../_fixtures/' + name);
+}
+
 
 describe('metadata', function() {
 
   describe('.get', function() {
 
-    it('returns a "thenable" that is resolved with an account summaries array.',
+    it('returns a "thenable" that is resolved with a metadata instance.',
         function(done) {
+
+      var fixture = getFixture('metadata');
+      var requestStub = gapiClientRequest(fixture);
 
       var returnValue = metadata.get();
       assert('then' in returnValue);
 
       returnValue.then(function(metadata) {
-        assert.deepEqual(metadata.all(), fixtures.items);
+        assert.deepEqual(metadata.all(), fixture.items);
         done();
       })
       .catch(done);
 
+      requestStub.restore();
     });
 
     it('does not query the API more than once, even with multiple calls.',
         function(done) {
 
-      var listSpy =
-          sinon.spy(gapi.client.analytics.metadata.columns, 'list');
+      var fixture = getFixture('metadata');
+      var requestStub = gapiClientRequest(fixture);
 
       metadata.get().then(function(metadata1) {
         metadata.get().then(function(metadata2) {
           metadata.get().then(function(metadata3) {
 
-            assert(listSpy.callCount === 0);
+            // It will be one if this test is run alone, zero if another
+            // test has run before it. Either way it's not 3.
+            assert(requestStub.callCount <= 1);
+
             assert.equal(metadata1, metadata2);
             assert.equal(metadata2, metadata3);
-            assert.deepEqual(metadata3.all(), fixtures.items);
+            assert.deepEqual(metadata3.all(), fixture.items);
 
-            listSpy.restore();
+            requestStub.restore();
             done();
           })
           .catch(done);
@@ -65,13 +73,14 @@ describe('metadata', function() {
 
     it('accepts an optional parameter to clear the cache.', function(done) {
 
-      var listSpy =
-          sinon.spy(gapi.client.analytics.metadata.columns, 'list');
+      var fixture = getFixture('metadata');
+      var requestStub = gapiClientRequest(fixture);
 
       metadata.get(true).then(function(metadata1) {
         metadata.get(true).then(function(metadata2) {
           metadata.get(true).then(function(metadata3) {
-            assert.equal(listSpy.callCount, 3);
+
+            assert.equal(requestStub.callCount, 3);
 
             // When clearing the cache these should be deepEqual but
             // not the same object.
@@ -80,9 +89,9 @@ describe('metadata', function() {
             assert.deepEqual(metadata1, metadata2);
             assert.deepEqual(metadata2, metadata3);
 
-            assert.deepEqual(metadata3.all(), fixtures.items);
+            assert.deepEqual(metadata3.all(), fixture.items);
 
-            listSpy.restore();
+            requestStub.restore();
             done();
           })
           .catch(done);
