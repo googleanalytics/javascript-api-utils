@@ -6,47 +6,62 @@
 </head>
 <body>
 
-<div id="embed-api-auth-container"></div>
+<button id="auth-button" hidden>Authorize</button>
+
 <pre id="account-summaries-output"></pre>
+
+<script>
+
+  var clientId = '793177639245-olst43lspv93vkoql0b9l26hmpf9kfmv' +
+                 '.apps.googleusercontent.com';
+
+  var scopes = ['https://www.googleapis.com/auth/analytics.readonly'];
+
+
+  function authorize(event) {
+
+    // `immediate` should be false when invoked from the button click.
+    var useImmdiate = event ? false : true;
+    var authData = {
+      client_id: clientId,
+      scope: scopes,
+      immediate: useImmdiate
+    };
+
+    gapi.auth.authorize(authData, function(response) {
+      var authButton = document.getElementById('auth-button');
+      if (response.error) {
+        authButton.hidden = false;
+      }
+      else {
+        authButton.hidden = true;
+        getAccountSummaries();
+      }
+    });
+  }
+
+  function getAccountSummaries() {
+    var output = document.getElementById('account-summaries-output');
+
+    gaApiUtils.accountSummaries.get().then(
+      function onResolved(summaries) {
+        output.innerText = JSON.stringify(summaries.all(), null, 2);
+      },
+      function onRejected(error) {
+        output.innerText = error.message;
+      }
+    );
+  }
+
+  document.getElementById('auth-button').addEventListener('click', authorize);
+</script>
+
+<script src="https://apis.google.com/js/client.js?onload=authorize"></script>
 
 <!-- Load the account summaries module, it will be at:
     `window.gaApiUtils.accountSummaries` -->
 <script src="ga-api-utils.js"></script>
 
-<script>
-// Use the Embed API to authorize the user.
-(function(w,d,s,g,js,fs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(f){this.q.push(f);}};
-  js=d.createElement(s);fs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fs.parentNode.insertBefore(js,fs);js.onload=function(){g.load('analytics');};
-}(window,document,'script'));
-
-gapi.analytics.ready(function() {
-
-  // Run the demo once the user is authorized.
-  gapi.analytics.auth.on('success', gaApiUtilsDemo);
-
-  // This client ID will work at http://localhost:8080.
-  // To run this demo on other hosts or ports, you must use your own client ID.
-  gapi.analytics.auth.authorize({
-    container: 'embed-api-auth-container',
-    clientid: '793177639245-olst43lspv93vkoql0b9l26hmpf9kfmv.apps.googleusercontent.com',
-  });
-});
-
-function gaApiUtilsDemo() {
-  var output = document.getElementById('account-summaries-output');
-  gaApiUtils.accountSummaries.get().then(
-    function onResolved(summaries) {
-      output.innerText = JSON.stringify(summaries.all(), null, 2);
-    },
-    function onRejected(error) {
-      output.innerText = error.message;
-    }
-  );
-}
-</script>
 
 </body>
 </html>
