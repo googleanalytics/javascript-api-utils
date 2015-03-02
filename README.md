@@ -15,9 +15,7 @@ npm install googleanalytics/javascript-api-utils
 
 ## Usage Examples:
 
-**Note**: all the examples below assume the user is authenticated and `gapi.client.analytics` is loaded on the page using the [Google APIs client library](https://developers.google.com/api-client-library/javascript/start/start-js).
-
-The easiest way to load the client library and authorize the current user is to use the [Google Analytics Embed API](https://developers.google.com/analytics/devguides/reporting/embed/).
+**Note**: all the examples below assume the user is authenticated and [`gapi.client`](https://developers.google.com/api-client-library/javascript/start/start-js) is loaded on the page. An easy way to load the client library and authorize the current user is to use the [Google Analytics Embed API](https://developers.google.com/analytics/devguides/reporting/embed/).
 
 ### Account Summaries
 
@@ -30,7 +28,18 @@ accountSummaries.get().then(function(summaries) {
 });
 ```
 
-To see a demo of the account summaries module, run the [demo file](https://github.com/googleanalytics/javascript-api-utils/blob/master/build/demo.html) on a local server on port 8080.
+### Metadata
+
+```js
+var metadata = require('javascript-api-utils/lib/metadata');
+
+// Log a list of all the user's Google Analytics views to the console.
+metadata.get().then(function(columns) {
+  console.log(columns.allMetrics());
+});
+```
+
+To see a demo of these modules in action, run the [demo file](https://github.com/googleanalytics/javascript-api-utils/blob/master/build/demo.html) on a local server on port 8080.
 
 ## Contributing
 
@@ -47,5 +56,3 @@ make test
 ```sh
 make build
 ```
-
-
