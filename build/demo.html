@@ -8,7 +8,11 @@
 
 <button id="auth-button" hidden>Authorize</button>
 
-<pre id="account-summaries-output"></pre>
+<h1>Account Summaries JSON</h1>
+<textarea cols="80" rows="20" id="account-summaries-output"></textarea>
+
+<h1>Metadata JSON</h1>
+<textarea cols="80" rows="20" id="metadata-output"></textarea>
 
 <script>
 
@@ -35,33 +39,27 @@
       }
       else {
         authButton.hidden = true;
-        getAccountSummaries();
+        getData();
       }
     });
   }
 
-  function getAccountSummaries() {
-    var output = document.getElementById('account-summaries-output');
-
-    gaApiUtils.accountSummaries.get().then(
-      function onResolved(summaries) {
-        output.innerText = JSON.stringify(summaries.all(), null, 2);
-      },
-      function onRejected(error) {
-        output.innerText = error.message;
-      }
-    );
+  function getData() {
+    gaApiUtils.accountSummaries.get().then(function(summaries) {
+      document.getElementById('account-summaries-output').value =
+          JSON.stringify(summaries.all(), null, 2);
+    });
+    gaApiUtils.metadata.get().then(function(columns) {
+      document.getElementById('metadata-output').value =
+          JSON.stringify(columns.all(), null, 2);
+    });
   }
 
   document.getElementById('auth-button').addEventListener('click', authorize);
 </script>
 
 <script src="https://apis.google.com/js/client.js?onload=authorize"></script>
-
-<!-- Load the account summaries module, it will be at:
-    `window.gaApiUtils.accountSummaries` -->
 <script src="ga-api-utils.js"></script>
-
 
 </body>
 </html>
