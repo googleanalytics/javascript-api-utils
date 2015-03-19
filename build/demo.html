@@ -16,7 +16,7 @@
 
 <script>
 
-  var clientId = '793177639245-olst43lspv93vkoql0b9l26hmpf9kfmv' +
+  var clientId = '396814960191-jrv1lfqkh7ueh0hutm5eks5rhh7q10vj' +
                  '.apps.googleusercontent.com';
 
   var scopes = ['https://www.googleapis.com/auth/analytics.readonly'];
@@ -24,12 +24,13 @@
 
   function authorize(event) {
 
-    // `immediate` should be false when invoked from the button click.
-    var useImmdiate = event ? false : true;
     var authData = {
       client_id: clientId,
       scope: scopes,
-      immediate: useImmdiate
+
+      // `immediate` should be false when invoked from the #auth-button click
+      // and true when invoked from the script's onload callback.
+      immediate: event ? false : true;
     };
 
     gapi.auth.authorize(authData, function(response) {
