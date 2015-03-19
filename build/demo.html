@@ -16,17 +16,17 @@
 
 <script>
 
-  var clientId = '396814960191-jrv1lfqkh7ueh0hutm5eks5rhh7q10vj' +
-                 '.apps.googleusercontent.com';
+  var CLIENT_ID = '396814960191-jrv1lfqkh7ueh0hutm5eks5rhh7q10vj' +
+                  '.apps.googleusercontent.com';
 
-  var scopes = ['https://www.googleapis.com/auth/analytics.readonly'];
+  var SCOPES = ['https://www.googleapis.com/auth/analytics.readonly'];
 
 
   function authorize(event) {
 
     var authData = {
-      client_id: clientId,
-      scope: scopes,
+      client_id: CLIENT_ID,
+      scope: SCOPES,
 
       // `immediate` should be false when invoked from the #auth-button click
       // and true when invoked from the script's onload callback.
