@@ -16,8 +16,8 @@
 /* global gapi:true */
 
 
-var clone = require('lodash-node/modern/lang/cloneDeep');
-var merge = require('lodash-node/modern/object/merge');
+var clone = require('lodash/lang/cloneDeep');
+var merge = require('lodash/object/merge');
 var namespace = require('mout/object/namespace');
 var sinon = require('sinon');
 
