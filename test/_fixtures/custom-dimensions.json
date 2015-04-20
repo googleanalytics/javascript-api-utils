@@ -1,0 +1,60 @@
+{
+  "kind": "analytics#customDimensions",
+  "username": "joe@gmail.com",
+  "totalResults": 3,
+  "startIndex": 1,
+  "itemsPerPage": 1000,
+  "items": [
+    {
+      "kind": "analytics#customDimension",
+      "id": "ga:dimension1",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Logged  In",
+      "index": 1,
+      "scope": "USER",
+      "active": true,
+      "created": "2012-12-18T18:39:54.311Z",
+      "updated": "2014-10-23T17:43:30.025Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customDimensions/ga:dimension1",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    },
+    {
+      "kind": "analytics#customDimension",
+      "id": "ga:dimension2",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Breakpoint",
+      "index": 2,
+      "scope": "HIT",
+      "active": true,
+      "created": "2014-05-07T06:25:42.410Z",
+      "updated": "2014-05-07T06:25:42.410Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customDimensions/ga:dimension2",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    },
+    {
+      "kind": "analytics#customDimension",
+      "id": "ga:dimension3",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Random",
+      "index": 3,
+      "scope": "HIT",
+      "active": true,
+      "created": "2014-06-05T23:51:38.528Z",
+      "updated": "2014-06-05T23:51:38.528Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customDimensions/ga:dimension3",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    }
+  ]
+}

@@ -939,14 +939,44 @@
       }
     },
     {
-      "id": "ga:goalXXStarts",
+      "id": "ga:goal1Starts",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "INTEGER",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Starts",
+        "uiName": "Checkout complete (Goal 1 Starts)",
+        "description": "The total number of starts for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal2Starts",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Starts)",
+        "description": "The total number of starts for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal3Starts",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Starts)",
         "description": "The total number of starts for the requested goal number.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "20",
@@ -967,14 +997,44 @@
       }
     },
     {
-      "id": "ga:goalXXCompletions",
+      "id": "ga:goal1Completions",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "INTEGER",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Completions",
+        "uiName": "Checkout complete (Goal 1 Completions)",
+        "description": "The total number of completions for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal2Completions",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Completions)",
+        "description": "The total number of completions for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal3Completions",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Completions)",
         "description": "The total number of completions for the requested goal number.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "20",
@@ -995,14 +1055,44 @@
       }
     },
     {
-      "id": "ga:goalXXValue",
+      "id": "ga:goal1Value",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "CURRENCY",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Value",
+        "uiName": "Checkout complete (Goal 1 Value)",
+        "description": "The total numeric value for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal2Value",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "CURRENCY",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Value)",
+        "description": "The total numeric value for the requested goal number.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:goal3Value",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "CURRENCY",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Value)",
         "description": "The total numeric value for the requested goal number.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "20",
@@ -1050,14 +1140,44 @@
       }
     },
     {
-      "id": "ga:goalXXConversionRate",
+      "id": "ga:goal1ConversionRate",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "PERCENT",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Conversion Rate",
+        "uiName": "Checkout complete (Goal 1 Conversion Rate)",
+        "description": "The percentage of sessions which resulted in a conversion to the requested goal number.",
+        "calculation": "ga:goalXXCompletions / ga:sessions",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal2ConversionRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Conversion Rate)",
+        "description": "The percentage of sessions which resulted in a conversion to the requested goal number.",
+        "calculation": "ga:goalXXCompletions / ga:sessions",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal3ConversionRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Conversion Rate)",
         "description": "The percentage of sessions which resulted in a conversion to the requested goal number.",
         "calculation": "ga:goalXXCompletions / ga:sessions",
         "minTemplateIndex": "1",
@@ -1078,14 +1198,44 @@
       }
     },
     {
-      "id": "ga:goalXXAbandons",
+      "id": "ga:goal1Abandons",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "INTEGER",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Abandoned Funnels",
+        "uiName": "Checkout complete (Goal 1 Abandoned Funnels)",
+        "description": "The number of times users started conversion activity on the requested goal number without actually completing it.",
+        "calculation": "(ga:goalXXStarts - ga:goalXXCompletions)",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal2Abandons",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Abandoned Funnels)",
+        "description": "The number of times users started conversion activity on the requested goal number without actually completing it.",
+        "calculation": "(ga:goalXXStarts - ga:goalXXCompletions)",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal3Abandons",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Abandoned Funnels)",
         "description": "The number of times users started conversion activity on the requested goal number without actually completing it.",
         "calculation": "(ga:goalXXStarts - ga:goalXXCompletions)",
         "minTemplateIndex": "1",
@@ -1106,14 +1256,44 @@
       }
     },
     {
-      "id": "ga:goalXXAbandonRate",
+      "id": "ga:goal1AbandonRate",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "PERCENT",
         "group": "Goal Conversions",
         "status": "PUBLIC",
-        "uiName": "Goal XX Abandonment Rate",
+        "uiName": "Checkout complete (Goal 1 Abandonment Rate)",
+        "description": "The rate at which the requested goal number was abandoned.",
+        "calculation": "((ga:goalXXStarts - ga:goalXXCompletions)) / (ga:goalXXStarts)",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal2AbandonRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Goal 2 Abandonment Rate)",
+        "description": "The rate at which the requested goal number was abandoned.",
+        "calculation": "((ga:goalXXStarts - ga:goalXXCompletions)) / (ga:goalXXStarts)",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:goal3AbandonRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Goal Conversions",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Goal 3 Abandonment Rate)",
         "description": "The rate at which the requested goal number was abandoned.",
         "calculation": "((ga:goalXXStarts - ga:goalXXCompletions)) / (ga:goalXXStarts)",
         "minTemplateIndex": "1",
@@ -1893,7 +2073,63 @@
       }
     },
     {
-      "id": "ga:contentGroupUniqueViewsXX",
+      "id": "ga:contentGroupUniqueViews1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews5",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
@@ -2244,14 +2480,44 @@
       }
     },
     {
-      "id": "ga:searchGoalXXConversionRate",
+      "id": "ga:searchGoal1ConversionRate",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "PERCENT",
         "group": "Internal Search",
         "status": "PUBLIC",
-        "uiName": "Site Search Goal XX Conversion Rate",
+        "uiName": "Checkout complete (Site Search Goal 1 Conversion Rate)",
+        "description": "The percentage of search sessions (i.e., sessions that included at least one search) which resulted in a conversion to the requested goal number.",
+        "calculation": "ga:goalXXCompletions / ga:searchUniques",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:searchGoal2ConversionRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Internal Search",
+        "status": "PUBLIC",
+        "uiName": "Create an account (Site Search Goal 2 Conversion Rate)",
+        "description": "The percentage of search sessions (i.e., sessions that included at least one search) which resulted in a conversion to the requested goal number.",
+        "calculation": "ga:goalXXCompletions / ga:searchUniques",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20"
+      }
+    },
+    {
+      "id": "ga:searchGoal3ConversionRate",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "PERCENT",
+        "group": "Internal Search",
+        "status": "PUBLIC",
+        "uiName": "Find store location (Site Search Goal 3 Conversion Rate)",
         "description": "The percentage of search sessions (i.e., sessions that included at least one search) which resulted in a conversion to the requested goal number.",
         "calculation": "ga:goalXXCompletions / ga:searchUniques",
         "minTemplateIndex": "1",
@@ -3516,14 +3782,14 @@
       }
     },
     {
-      "id": "ga:dimensionXX",
+      "id": "ga:dimension1",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Custom Variables or Columns",
         "status": "PUBLIC",
-        "uiName": "Custom Dimension XX",
+        "uiName": "Logged  In (Custom Dimension 1)",
         "description": "The name of the requested custom dimension, where XX refers the number/index of the custom dimension.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "20",
@@ -3533,14 +3799,48 @@
       }
     },
     {
-      "id": "ga:customVarNameXX",
+      "id": "ga:dimension2",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Custom Variables or Columns",
         "status": "PUBLIC",
-        "uiName": "Custom Variable (Key XX)",
+        "uiName": "Breakpoint (Custom Dimension 2)",
+        "description": "The name of the requested custom dimension, where XX refers the number/index of the custom dimension.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "200",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:dimension3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Random (Custom Dimension 3)",
+        "description": "The name of the requested custom dimension, where XX refers the number/index of the custom dimension.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "200",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarName1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Key 1)",
         "description": "The name for the requested custom variable.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -3550,14 +3850,82 @@
       }
     },
     {
-      "id": "ga:metricXX",
+      "id": "ga:customVarName2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Key 2)",
+        "description": "The name for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarName3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Key 3)",
+        "description": "The name for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarName4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Key 4)",
+        "description": "The name for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarName5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Key 5)",
+        "description": "The name for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:metric1",
       "kind": "analytics#column",
       "attributes": {
         "type": "METRIC",
         "dataType": "INTEGER",
         "group": "Custom Variables or Columns",
         "status": "PUBLIC",
-        "uiName": "Custom Metric XX Value",
+        "uiName": "Queries  (success) (Custom Metric 1)",
         "description": "The name of the requested custom metric, where XX refers the number/index of the custom metric.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "20",
@@ -3567,14 +3935,116 @@
       }
     },
     {
-      "id": "ga:customVarValueXX",
+      "id": "ga:metric2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Queries  (error) (Custom Metric 2)",
+        "description": "The name of the requested custom metric, where XX refers the number/index of the custom metric.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "200",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:metric3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Monies (Custom Metric 3)",
+        "description": "The name of the requested custom metric, where XX refers the number/index of the custom metric.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "20",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "200",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarValue1",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Custom Variables or Columns",
         "status": "PUBLIC",
-        "uiName": "Custom Variable (Value XX)",
+        "uiName": "Custom Variable (Value 1)",
+        "description": "The value for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarValue2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Value 2)",
+        "description": "The value for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarValue3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Value 3)",
+        "description": "The value for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarValue4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Value 4)",
+        "description": "The value for the requested custom variable.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "premiumMinTemplateIndex": "1",
+        "premiumMaxTemplateIndex": "50",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:customVarValue5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Custom Variables or Columns",
+        "status": "PUBLIC",
+        "uiName": "Custom Variable (Value 5)",
         "description": "The value for the requested custom variable.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -4390,14 +4860,14 @@
       }
     },
     {
-      "id": "ga:landingContentGroupXX",
+      "id": "ga:landingContentGroup1",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Landing Page Group XX",
+        "uiName": "Landing Page Group 1",
         "description": "The first matching content group in a user's session.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -4405,14 +4875,74 @@
       }
     },
     {
-      "id": "ga:previousContentGroupXX",
+      "id": "ga:landingContentGroup2",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Previous Page Group XX",
+        "uiName": "Landing Page Group 2",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 3",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 4",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 5",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 1",
         "description": "Refers to content group that was visited before another content group.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -4420,14 +4950,74 @@
       }
     },
     {
-      "id": "ga:contentGroupXX",
+      "id": "ga:previousContentGroup2",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Page Group XX",
+        "uiName": "Previous Page Group 2",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 3",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 4",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 5",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 1",
         "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -4435,14 +5025,134 @@
       }
     },
     {
-      "id": "ga:nextContentGroupXX",
+      "id": "ga:contentGroup2",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Next Page Group XX",
+        "uiName": "Page Group 2",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 3",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 4",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 5",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 1",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 2",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 3",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 4",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 5",
         "description": "Refers to content group that was visited after another content group.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
@@ -4836,14 +5546,74 @@
       }
     },
     {
-      "id": "ga:productCategoryLevelXX",
+      "id": "ga:productCategoryLevel1",
       "kind": "analytics#column",
       "attributes": {
         "type": "DIMENSION",
         "dataType": "STRING",
         "group": "Ecommerce",
         "status": "PUBLIC",
-        "uiName": "Product Category Level XX",
+        "uiName": "Product Category Level 1",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 2",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 3",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 4",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 5",
         "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5",
