@@ -1900,7 +1900,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (XX)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"

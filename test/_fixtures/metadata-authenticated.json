@@ -2080,7 +2080,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (1)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"
@@ -2094,7 +2094,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (2)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"
@@ -2108,7 +2108,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (3)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"
@@ -2122,7 +2122,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (4)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"
@@ -2136,7 +2136,7 @@
         "dataType": "INTEGER",
         "group": "Content Grouping",
         "status": "PUBLIC",
-        "uiName": "Unique Views",
+        "uiName": "Unique Views (5)",
         "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
         "minTemplateIndex": "1",
         "maxTemplateIndex": "5"

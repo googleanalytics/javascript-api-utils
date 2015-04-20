@@ -2073,6 +2073,76 @@
       }
     },
     {
+      "id": "ga:contentGroupUniqueViews1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views (1)",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views (2)",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views (3)",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views (4)",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
+      "id": "ga:contentGroupUniqueViews5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "METRIC",
+        "dataType": "INTEGER",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Unique Views (5)",
+        "description": "The number of different (unique) pages within a session for the specified content group. This takes into account both the pagePath and pageTitle to determine uniqueness.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5"
+      }
+    },
+    {
       "id": "ga:uniquePageviews",
       "kind": "analytics#column",
       "attributes": {
@@ -6320,6 +6390,306 @@
       }
     },
     {
+      "id": "ga:landingContentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 1",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 2",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 3",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 4",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:landingContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Landing Page Group 5",
+        "description": "The first matching content group in a user's session.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 1",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 2",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 3",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 4",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:previousContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Previous Page Group 5",
+        "description": "Refers to content group that was visited before another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 1",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 2",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 3",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 4",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:contentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Page Group 5",
+        "description": "Content group on a property. A content group is a collection of content providing a logical structure that can be determined by tracking code or page title/url regex match, or predefined rules.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 1",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 2",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 3",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 4",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:nextContentGroup5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Content Grouping",
+        "status": "PUBLIC",
+        "uiName": "Next Page Group 5",
+        "description": "Refers to content group that was visited after another content group.",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
       "id": "ga:userAgeBracket",
       "kind": "analytics#column",
       "attributes": {
@@ -6702,6 +7072,81 @@
         "status": "PUBLIC",
         "uiName": "Product Category (Enhanced Ecommerce)",
         "description": "The hierarchical category in which the product is classified (Enhanced Ecommerce).",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel1",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 1",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel2",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 2",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel3",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 3",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel4",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 4",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
+        "allowedInSegments": "true"
+      }
+    },
+    {
+      "id": "ga:productCategoryLevel5",
+      "kind": "analytics#column",
+      "attributes": {
+        "type": "DIMENSION",
+        "dataType": "STRING",
+        "group": "Ecommerce",
+        "status": "PUBLIC",
+        "uiName": "Product Category Level 5",
+        "description": "Level (1-5) in the product category hierarchy, starting from the top (Enhanced Ecommerce).",
+        "minTemplateIndex": "1",
+        "maxTemplateIndex": "5",
         "allowedInSegments": "true"
       }
     },
