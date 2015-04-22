@@ -101,7 +101,9 @@ describe('metadata', function() {
     it('returns a promise that is resolved with a metadata instance ' +
         'containing columns unique to this property/view.', function(done) {
 
-      var returnValue = metadata.getAuthenticated(12345, 'UA-12345-1', 6789);
+      var returnValue = metadata.getAuthenticated({id: 12345},
+          {id: 'UA-12345-1'}, {id: 6789});
+
       assert(returnValue instanceof Promise);
 
       returnValue.then(function(metadata) {
@@ -116,10 +118,12 @@ describe('metadata', function() {
 
     it('uses the premium template for premium properties.', function(done) {
 
-      metadata
-          .getAuthenticated(12345, 'UA-12345-1', 6789, true)
-          .then(function(metadata) {
-
+      metadata.getAuthenticated(
+        {id: 12345},
+        {id: 'UA-12345-1', level: 'PREMIUM'},
+        {id: 6789}
+      )
+      .then(function(metadata) {
         assert.deepEqual(
           metadata.all(),
           getFixture('metadata-authenticated-premium').items
@@ -134,8 +138,8 @@ describe('metadata', function() {
     it('does not query the API more than once, even with multiple calls.',
         function(done) {
 
-      var call = metadata.getAuthenticated
-          .bind(metadata, 12345, 'UA-12345-1', 6789);
+      var call = metadata.getAuthenticated.bind(metadata, {id: 12345},
+          {id: 'UA-12345-1'}, {id: 6789});
 
       call().then(function(metadata1) {
         call().then(function(metadata2) {
