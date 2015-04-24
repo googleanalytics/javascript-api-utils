@@ -31,7 +31,9 @@ describe('accountSummaries', function() {
         function(done) {
 
       var fixture = getFixture('account-summaries');
-      var requestStub = gapiClientRequest(fixture);
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      });
 
       var returnValue = accountSummaries.get();
       assert('then' in returnValue);
@@ -49,7 +51,9 @@ describe('accountSummaries', function() {
         function(done) {
 
       var fixture = getFixture('account-summaries');
-      var requestStub = gapiClientRequest(fixture);
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      });
 
       accountSummaries.get().then(function(summaries1) {
         accountSummaries.get().then(function(summaries2) {
@@ -74,7 +78,9 @@ describe('accountSummaries', function() {
     it('accepts an optional parameter to clear the cache.', function(done) {
 
       var fixture = getFixture('account-summaries');
-      var requestStub = gapiClientRequest(fixture);
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      });
 
       accountSummaries.get(true).then(function(summaries1) {
         accountSummaries.get(true).then(function(summaries2) {
@@ -104,7 +110,9 @@ describe('accountSummaries', function() {
         function(done) {
 
       var fixture = getFixture('account-summaries');
-      var requestStub = gapiClientRequest(fixture, {
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      }, {
         params: {
           'max-results': 2
         }
@@ -129,8 +137,10 @@ describe('accountSummaries', function() {
         'Google Analytics accounts.', function(done) {
 
       var fixture = getFixture('account-summaries-no-accounts');
-      var requestStub = gapiClientRequest(fixture);
-
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      });
+      
       accountSummaries.get(true).catch(function(err) {
         assert.equal(err.message, 'You do not have any Google Analytics ' +
             'accounts. Go to http://google.com/analytics to sign up.');

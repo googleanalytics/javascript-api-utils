@@ -22,7 +22,7 @@ var namespace = require('mout/object/namespace');
 var sinon = require('sinon');
 
 
-module.exports = function(fixtures, stubOpts) {
+module.exports = function(fixtureMap, stubOpts) {
 
   namespace(global, 'gapi.client');
   gapi.client.request = gapi.client.request || function() {};
@@ -33,7 +33,11 @@ module.exports = function(fixtures, stubOpts) {
     var params = options.params || {};
 
     // Clone the fixtures so object modifications don't persist.
-    var response = { result: clone(fixtures) };
+    var response = { result: clone(fixtureMap[options.path]) };
+
+    if (!response.result) {
+      console.log(options);
+    }
 
     // Account for the parameters "start-index" and "max-results".
     response.result.startIndex = params['start-index'] || 1;

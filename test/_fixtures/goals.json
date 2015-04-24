@@ -1,0 +1,115 @@
+{
+  "kind": "analytics#goals",
+  "username": "joe@gmail.com",
+  "totalResults": 3,
+  "startIndex": 1,
+  "itemsPerPage": 1000,
+  "items": [
+    {
+      "id": "1",
+      "kind": "analytics#goal",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789/goals/1",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "internalWebPropertyId": "1234",
+      "profileId": "6789",
+      "name": "Checkout complete",
+      "value": 0,
+      "active": true,
+      "type": "URL_DESTINATION",
+      "created": "2005-06-24T01:08:01.000Z",
+      "updated": "2014-05-14T05:36:55.924Z",
+      "parentLink": {
+        "type": "analytics#profile",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789"
+      },
+      "urlDestinationDetails": {
+        "url": "/shop\\.axd/SubmitOrder",
+        "caseSensitive": false,
+        "matchType": "REGEX",
+        "firstStepRequired": false,
+        "steps": [
+          {
+            "number": 1,
+            "name": "Billing Address",
+            "url": "/shop\\.axd/.*BillingAddress"
+          },
+          {
+            "number": 2,
+            "name": "Shipping Details",
+            "url": "/shop\\.axd/.*Shipping"
+          },
+          {
+            "number": 3,
+            "name": "Payment Method",
+            "url": "/shop\\.axd/UpdatePaymentMethod"
+          }
+        ]
+      }
+    },
+    {
+      "id": "2",
+      "kind": "analytics#goal",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789/goals/2",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "internalWebPropertyId": "1234",
+      "profileId": "6789",
+      "name": "Create an account",
+      "value": 0,
+      "active": true,
+      "type": "URL_DESTINATION",
+      "created": "2005-06-24T01:08:16.000Z",
+      "updated": "2014-05-14T05:37:38.920Z",
+      "parentLink": {
+        "type": "analytics#profile",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789"
+      },
+      "urlDestinationDetails": {
+        "url": "/createaccount.asp",
+        "caseSensitive": false,
+        "matchType": "REGEX",
+        "firstStepRequired": false,
+        "steps": [
+          {
+            "number": 1,
+            "name": "Home Page",
+            "url": "/home.asp"
+          }
+        ]
+      }
+    },
+    {
+      "id": "3",
+      "kind": "analytics#goal",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789/goals/3",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "internalWebPropertyId": "1234",
+      "profileId": "6789",
+      "name": "Find store location",
+      "value": 0,
+      "active": true,
+      "type": "URL_DESTINATION",
+      "created": "2005-06-24T01:08:30.000Z",
+      "updated": "2014-05-14T05:38:15.212Z",
+      "parentLink": {
+        "type": "analytics#profile",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/profiles/6789"
+      },
+      "urlDestinationDetails": {
+        "url": "/software.asp",
+        "caseSensitive": false,
+        "matchType": "REGEX",
+        "firstStepRequired": false,
+        "steps": [
+          {
+            "number": 1,
+            "name": "Home Page",
+            "url": "/home.asp"
+          }
+        ]
+      }
+    }
+  ]
+}

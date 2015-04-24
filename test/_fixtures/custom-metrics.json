@@ -1,0 +1,64 @@
+{
+  "kind": "analytics#customMetrics",
+  "username": "joe@gmail.com",
+  "totalResults": 3,
+  "startIndex": 1,
+  "itemsPerPage": 1000,
+  "items": [
+    {
+      "kind": "analytics#customMetric",
+      "id": "ga:metric1",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Queries  (success)",
+      "index": 1,
+      "scope": "HIT",
+      "active": true,
+      "type": "INTEGER",
+      "max_value": "1234",
+      "created": "2014-06-27T19:01:40.073Z",
+      "updated": "2014-06-27T19:04:33.434Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customMetrics/ga:metric1",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    },
+    {
+      "kind": "analytics#customMetric",
+      "id": "ga:metric2",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Queries  (error)",
+      "index": 2,
+      "scope": "HIT",
+      "active": true,
+      "type": "INTEGER",
+      "created": "2015-03-25T22:03:08.602Z",
+      "updated": "2015-03-25T22:03:08.602Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customMetrics/ga:metric2",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    },
+    {
+      "kind": "analytics#customMetric",
+      "id": "ga:metric3",
+      "accountId": "12345",
+      "webPropertyId": "UA-12345-1",
+      "name": "Monies",
+      "index": 2,
+      "scope": "CURRENCY",
+      "active": true,
+      "type": "INTEGER",
+      "created": "2015-03-26T22:03:08.602Z",
+      "updated": "2015-03-26T22:03:08.602Z",
+      "selfLink": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1/customMetrics/ga:metric2",
+      "parentLink": {
+        "type": "analytics#webproperty",
+        "href": "https://www.googleapis.com/analytics/v3/management/accounts/12345/webproperties/UA-12345-1"
+      }
+    }
+  ]
+}
