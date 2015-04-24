@@ -15,7 +15,7 @@ npm install googleanalytics/javascript-api-utils
 
 ## Usage Examples:
 
-**Note**: all the examples below assume the user is authenticated and [`gapi.client`](https://developers.google.com/api-client-library/javascript/start/start-js) is loaded on the page. An easy way to load the client library and authorize the current user is to use the [Google Analytics Embed API](https://developers.google.com/analytics/devguides/reporting/embed/).
+**Note**: all the examples below assume the user is authenticated and [`gapi.client`](https://developers.google.com/api-client-library/javascript/start/start-js) is loaded on the page. They also assume the browser supports promises. If you're including this library on sites where modern browser usage isn't guaranteed, a [Promise polyfill](https://github.com/addyosmani/es6-tools#polyfills) is required.
 
 ### Account Summaries
 
