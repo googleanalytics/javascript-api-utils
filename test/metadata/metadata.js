@@ -18,28 +18,34 @@ var Metadata = require('../../lib/metadata/metadata');
 
 var columns = require('../_fixtures/metadata.json').items;
 
+var integerColumns = columns.filter(function(column) {
+  return column.attributes.dataType == 'INTEGER';
+});
+
 var metrics = columns.filter(function(column) {
   return column.attributes.type == 'METRIC';
 });
 
-var publicMetrics = metrics.filter(function(metric) {
-  return metric.attributes.status == 'PUBLIC';
+var v3publicMetrics = metrics.filter(function(metric) {
+  return metric.attributes.status == 'PUBLIC' &&
+      metric.attributes.addedInApiVersion === '3';
 });
 
-var deprecatedMetrics = metrics.filter(function(metric) {
-  return metric.attributes.status == 'DEPRECATED';
+var integerMetrics = metrics.filter(function(metric) {
+  return metric.attributes.dataType == 'INTEGER';
 });
 
 var dimensions = columns.filter(function(column) {
   return column.attributes.type == 'DIMENSION';
 });
 
-var publicDimensions = dimensions.filter(function(dimension) {
-  return dimension.attributes.status == 'PUBLIC';
+var v3publicDimensions = dimensions.filter(function(dimension) {
+  return dimension.attributes.status == 'PUBLIC' &&
+      dimension.attributes.addedInApiVersion === '3';
 });
 
-var deprecatedDimensions = dimensions.filter(function(dimension) {
-  return dimension.attributes.status == 'DEPRECATED';
+var integerDimensions = dimensions.filter(function(dimension) {
+  return dimension.attributes.dataType == 'INTEGER';
 });
 
 
@@ -51,26 +57,53 @@ describe('Metadata', function() {
     it('returns the full list of columns.', function() {
       assert.deepEqual(metadata.all(), columns);
     });
+
+    it('accepts an optional filter argument object.', function() {
+      var filter = {type: 'METRIC', status: 'PUBLIC', addedInApiVersion: '3'};
+      assert.deepEqual(metadata.all(filter), v3publicMetrics);
+    });
+
+    it('accepts an optional filter argument function.', function() {
+      var filter = function(attributes) {
+        return attributes.dataType == 'INTEGER';
+      };
+      assert.deepEqual(metadata.all(filter), integerColumns);
+    });
   });
 
   describe('#allMetrics', function() {
-    it('gets only the columns that are metrics, optionally filtered' +
-        'by a status parameter.', function() {
-
+    it('gets only the columns that are metrics', function() {
       assert.deepEqual(metadata.allMetrics(), metrics);
-      assert.deepEqual(metadata.allMetrics('public'), publicMetrics);
-      assert.deepEqual(metadata.allMetrics('deprecated'), deprecatedMetrics);
+    });
+
+    it('accepts an optional filter argument.', function() {
+      var filter = {addedInApiVersion: '3', status: 'PUBLIC'};
+      assert.deepEqual(metadata.allMetrics(filter), v3publicMetrics);
+    });
+
+    it('accepts an optional filter argument function.', function() {
+      var filter = function(attributes) {
+        return attributes.dataType == 'INTEGER';
+      };
+      assert.deepEqual(metadata.allMetrics(filter), integerMetrics);
     });
   });
 
   describe('#allDimensions', function() {
-    it('gets only the columns that are dimensions, optionally filtered' +
-        'by a status parameter.', function() {
-
+    it('gets only the columns that are dimensions', function() {
       assert.deepEqual(metadata.allDimensions(), dimensions);
-      assert.deepEqual(metadata.allDimensions('public'), publicDimensions);
-      assert.deepEqual(metadata.allDimensions('deprecated'),
-          deprecatedDimensions);
+    });
+
+    it('accepts an optional filter argument.', function() {
+      var filter = {addedInApiVersion: '3', status: 'PUBLIC'};
+      assert.deepEqual(metadata.allDimensions(filter), v3publicDimensions);
+    });
+
+    it('accepts an optional filter argument function.', function() {
+      var filter = function(attributes) {
+        return attributes.dataType == 'INTEGER';
+      };
+      assert.deepEqual(metadata.allDimensions(filter), integerDimensions);
     });
   });
 
