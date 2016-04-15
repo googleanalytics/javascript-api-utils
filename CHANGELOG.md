@@ -1,3 +1,8 @@
+### 0.5.0 (April 14, 2016)
+
+* Add the option to filter metadata columns by any attribute.
+
+
 ### 0.4.0 (April 23, 2015)
 
 * Add a `metadata.getAuthenticated` method that gets columns specific to an individual Google Analytics view.
