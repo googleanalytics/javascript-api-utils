@@ -64,7 +64,9 @@ describe('Metadata', function() {
     });
 
     it('accepts an optional filter argument function.', function() {
-      var filter = function(attributes) {
+      var filter = function(attributes, id) {
+        assert(typeof attributes == 'object');
+        assert(/^ga:/.test(id));
         return attributes.dataType == 'INTEGER';
       };
       assert.deepEqual(metadata.all(filter), integerColumns);
@@ -82,7 +84,9 @@ describe('Metadata', function() {
     });
 
     it('accepts an optional filter argument function.', function() {
-      var filter = function(attributes) {
+      var filter = function(attributes, id) {
+        assert(typeof attributes == 'object');
+        assert(/^ga:/.test(id));
         return attributes.dataType == 'INTEGER';
       };
       assert.deepEqual(metadata.allMetrics(filter), integerMetrics);
