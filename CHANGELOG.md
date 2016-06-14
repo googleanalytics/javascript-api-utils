@@ -1,3 +1,8 @@
+### 0.6.0 (June 14, 2016)
+
+* Expose the column ID to metadata column filters.
+
+
 ### 0.5.0 (April 14, 2016)
 
 * Add the option to filter metadata columns by any attribute.
