@@ -133,23 +133,6 @@ describe('accountSummaries', function() {
 
     });
 
-    it('throws if the user requesting the summares does not have any ' +
-        'Google Analytics accounts.', function(done) {
-
-      var fixture = getFixture('account-summaries-no-accounts');
-      var requestStub = gapiClientRequest({
-        '/analytics/v3/management/accountSummaries': fixture
-      });
-      
-      accountSummaries.get(true).catch(function(err) {
-        assert.equal(err.message, 'You do not have any Google Analytics ' +
-            'accounts. Go to http://google.com/analytics to sign up.');
-
-        requestStub.restore();
-        done();
-      });
-    });
-
   });
 
 });
