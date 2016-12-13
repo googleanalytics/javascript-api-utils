@@ -143,38 +143,10 @@
       ]
     },
     {
-      "id": "1004",
-      "kind": "analytics#accountSummary",
-      "name": "Account D"
-    },
-    {
-      "id": "1005",
-      "kind": "analytics#accountSummary",
-      "name": "Account E",
-      "webProperties": [
-        {
-          "kind": "analytics#webPropertySummary",
-          "id": "UA-1005-1",
-          "name": "WebProperty E.A",
-          "internalWebPropertyId": "3006",
-          "level": "STANDARD",
-          "websiteUrl": "http://example.com"
-        }
-      ]
-    },
-    {
       "id": "1006",
       "kind": "analytics#accountSummary",
       "name": "Account F",
       "webProperties": [
-        {
-          "kind": "analytics#webPropertySummary",
-          "id": "UA-1006-1",
-          "name": "WebProperty E.A",
-          "internalWebPropertyId": "3007",
-          "level": "STANDARD",
-          "websiteUrl": "http://example.com"
-        },
         {
           "kind": "analytics#webPropertySummary",
           "id": "UA-1006-2",

@@ -17,6 +17,10 @@ var AccountSummaries = require('../../lib/account-summaries/account-summaries');
 var assert = require('assert');
 
 var fixtureAccounts = require('../_fixtures/account-summaries').items;
+var fixtureAccountsEmptiesIgnored =
+    require('../_fixtures/account-summaries-empties-ignored').items;
+
+
 
 var fixtureWebProperties = fixtureAccounts
     .reduce(function(webProperties, account) {
@@ -34,8 +38,25 @@ var fixtureProfiles = fixtureWebProperties
 
 
 describe('AccountSummaries', function() {
-
   var summaries = new AccountSummaries(fixtureAccounts);
+
+  describe('#constructor', function() {
+    it('creates an instance with the entire account tree set', function() {
+      assert.deepEqual(summaries.all(), fixtureAccounts);
+    });
+
+    it('optionally removes empty properties/views from the account tree',
+        function() {
+      var summariesEmptiesIgnored =
+          new AccountSummaries(fixtureAccounts, {ignoreEmpty: true});
+
+      assert(!summariesEmptiesIgnored.get({accountId: 1004}));
+      assert(!summariesEmptiesIgnored.get({accountId: 1005}));
+      assert(!summariesEmptiesIgnored.get({propertyId: 'UA-1006-1'}));
+      assert.deepEqual(
+          summariesEmptiesIgnored.all(), fixtureAccountsEmptiesIgnored);
+    });
+  });
 
   describe('#all', function() {
     it('returns the full list of accounts the user has access to.', function() {
@@ -119,7 +140,7 @@ describe('AccountSummaries', function() {
     it('returns the web property with the specified ID.', function() {
       assert.equal(
           summaries.getWebProperty('UA-1005-1').name,
-          'WebProperty E.A (View-less)');
+          'WebProperty E.A');
     });
   });
 
@@ -127,7 +148,7 @@ describe('AccountSummaries', function() {
     it('returns the property with the specified ID.', function() {
       assert.equal(
           summaries.getProperty('UA-1005-1').name,
-          'WebProperty E.A (View-less)');
+          'WebProperty E.A');
     });
   });
 

@@ -55,17 +55,13 @@ describe('accountSummaries', function() {
         '/analytics/v3/management/accountSummaries': fixture
       });
 
-      accountSummaries.get().then(function(summaries1) {
-        accountSummaries.get().then(function(summaries2) {
-          accountSummaries.get().then(function(summaries3) {
+      accountSummaries.get().then(function() {
+        accountSummaries.get().then(function() {
+          accountSummaries.get().then(function() {
 
             // It will be one if this test is run alone, zero if another
             // test has run before it. Either way it's not 3.
             assert(requestStub.callCount <= 1);
-
-            assert.equal(summaries1, summaries2);
-            assert.equal(summaries2, summaries3);
-            assert.deepEqual(summaries3.all(), fixture.items);
 
             requestStub.restore();
             done();
@@ -75,27 +71,18 @@ describe('accountSummaries', function() {
       });
     });
 
-    it('accepts an optional parameter to clear the cache.', function(done) {
+    it('accepts a noCache option to clear the cache.', function(done) {
 
       var fixture = getFixture('account-summaries');
       var requestStub = gapiClientRequest({
         '/analytics/v3/management/accountSummaries': fixture
       });
 
-      accountSummaries.get(true).then(function(summaries1) {
-        accountSummaries.get(true).then(function(summaries2) {
-          accountSummaries.get(true).then(function(summaries3) {
+      accountSummaries.get({noCache: true}).then(function() {
+        accountSummaries.get({noCache: true}).then(function() {
+          accountSummaries.get({noCache: true}).then(function() {
 
             assert.equal(requestStub.callCount, 3);
-
-            // When clearing the cache these should be deepEqual but
-            // not the same object.
-            assert.notEqual(summaries1, summaries2);
-            assert.notEqual(summaries2, summaries3);
-            assert.deepEqual(summaries1, summaries2);
-            assert.deepEqual(summaries2, summaries3);
-
-            assert.deepEqual(summaries3.all(), fixture.items);
 
             requestStub.restore();
             done();
@@ -118,7 +105,7 @@ describe('accountSummaries', function() {
         }
       });
 
-      accountSummaries.get(true).then(function(summaries) {
+      accountSummaries.get({noCache: true}).then(function(summaries) {
         // `gapi.client.request` will be called three times because
         // the response is paginated.
         assert.equal(requestStub.callCount, 3);
@@ -133,6 +120,21 @@ describe('accountSummaries', function() {
 
     });
 
-  });
+    it('optionally ignores empty properties/views', function(done) {
+      var fixture = getFixture('account-summaries');
+      var requestStub = gapiClientRequest({
+        '/analytics/v3/management/accountSummaries': fixture
+      });
 
+      accountSummaries.get({ignoreEmpty: true}).then(function(summaries) {
+        assert.deepEqual(
+            summaries.all(),
+            getFixture('account-summaries-empties-ignored').items);
+
+        requestStub.restore();
+        done();
+      })
+      .catch(done);
+    });
+  });
 });
