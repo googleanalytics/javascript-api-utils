@@ -1,3 +1,10 @@
+### 0.7.0 (Dec 12, 2016)
+
+* Remove the promise rejection when no accounts are found.
+* Move the `noCache` flag into a config object for `accountSummaries.get`.
+* Add an `ignoreEmpty` option to the `accountSummaries.get` config object.
+
+
 ### 0.6.0 (June 14, 2016)
 
 * Expose the column ID to metadata column filters.

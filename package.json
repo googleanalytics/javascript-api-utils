@@ -1,6 +1,6 @@
 {
   "name": "javascript-api-utils",
-  "version": "0.6.0",
+  "version": "0.7.0",
   "description": "A collection of utility modules built on top of the gapi client library.",
   "scripts": {
     "test": "make"
