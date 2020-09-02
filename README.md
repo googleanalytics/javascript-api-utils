@@ -1,3 +1,6 @@
+# No longer actively maintained
+You should migrate to using [gapi](https://github.com/google/google-api-javascript-client/blob/master/docs/start.md) directly. 
+
 Google Analytics JavaScript API Utilities
 =========================================
 
